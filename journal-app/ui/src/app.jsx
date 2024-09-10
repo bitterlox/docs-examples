@@ -9,12 +9,13 @@ import {
 import DayPicker from "react-day-picker";
 import { startOfDay, endOfDay } from "date-fns";
 import { BottomScrollListener } from "react-bottom-scroll-listener";
+import coffee from './assets/coffee.jpg'
 
 ////////////////////
 // Main Component //
 ////////////////////
 
-export default function App() {
+export default function App() {  
   /////////////////////////
   /// Application State ///
   /////////////////////////
@@ -223,7 +224,7 @@ export default function App() {
         <Card style={{ maxWidth: "50rem", width: "100%" }}>
           {/* Main Content */}
           <Tabs defaultActiveKey="journal" className="fs-2">
-            <Tab eventKey="journal" title="Journal">
+            <Tab eventKey="journal" title="Diario">
               <BottomScrollListener onBottom={() => getEntries().then(
                 (result) => setSubEvent(result),
                 (err) => addError("Fetching more entries failed")
@@ -249,7 +250,7 @@ export default function App() {
                 )}
               </BottomScrollListener>
             </Tab>
-            <Tab eventKey="search" title="Search">
+            <Tab eventKey="search" title="Ricerca">
               <Stack gap={5} className="m-3 d-flex">
                 <SearchInput
                   searchMeta={searchMeta}
@@ -309,6 +310,11 @@ export default function App() {
               </Toast.Body>
             </Toast>
           </ToastContainer>
+        </Card>
+
+        <Card style={{ maxWidth: "50rem", width: "100%" }}>
+          <img src={coffee} />
+          <img src="https://free-images.com/or/aa2a/oregon_beach_sand_rocks.jpg" />
         </Card>
       </div>
     </React.Fragment>
